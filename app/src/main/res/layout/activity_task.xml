@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ua.kiev.farmaco.inventory.activities.Task">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+       android:layout_gravity="center"
+       android:textColor="@android:color/black"
+       android:text="task number"/>
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+       android:layout_gravity="center"
+       android:textColor="@android:color/black"
+       android:text="task cell #"/>
+
+   <FrameLayout
+       android:id="@+id/bar_code_scan_frame_layout"
+       android:layout_margin="30dp"
+       android:layout_width="match_parent"
+       android:layout_height="250dp">
+
+      <fragment
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          tools:layout="@layout/fragment_barcode_scan" />
+   </FrameLayout>
+
+</LinearLayout>

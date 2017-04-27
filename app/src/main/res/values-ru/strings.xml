@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Inventory</string>
+    <string name="get_new_task">Взять задание</string>
+    <string name="get_new_task_textview">Если Вы готовы начать инвентаризацию -
+        нажмите кнопку \"Взять задание\".</string>
+    <string name="task_label">Задание</string>
+
+</resources>
