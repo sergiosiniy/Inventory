@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ua.kiev.farmaco.inventarizator.ua.kiev.farmaco.inventor.MainActivity">
+    tools:context="ua.kiev.farmaco.inventory.activities.MainActivity">
 
     <TextView
         android:layout_margin="30dp"
