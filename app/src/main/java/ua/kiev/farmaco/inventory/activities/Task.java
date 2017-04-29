@@ -1,7 +1,13 @@
 package ua.kiev.farmaco.inventory.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.hardware.Camera;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,38 +17,50 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.journeyapps.barcodescanner.CaptureActivity;
+
 
 import ua.kiev.farmaco.inventory.R;
 
 
 public class Task extends AppCompatActivity {
 
-    Activity activity = this;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
-        Button scan = (Button) findViewById(R.id.scan_button);
+
+
+        final Button scan = (Button) findViewById(R.id.scan_button);
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentIntegrator scanBarCode = new IntentIntegrator(activity);
-                scanBarCode.setBarcodeImageEnabled(true);
-                scanBarCode.setBeepEnabled(false);
-                scanBarCode.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
-
-
-                scanBarCode.initiateScan();
+                startScan();
             }
         });
     }
+
+    private void startScan(){
+        IntentIntegrator scanBarCode = new IntentIntegrator(this);
+        scanBarCode.setBarcodeImageEnabled(true);
+        scanBarCode.setBeepEnabled(false);
+        scanBarCode.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
+        scanBarCode.setBeepEnabled(true);
+        scanBarCode.setOrientationLocked(true);
+        scanBarCode.setCameraId(0);
+        scanBarCode.initiateScan();
+    }
+
 
 
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         IntentResult resultScan = IntentIntegrator
                 .parseActivityResult(requestCode, resultCode, data);
         if (resultScan != null) {
@@ -51,11 +69,14 @@ public class Task extends AppCompatActivity {
             TextView contents = (TextView) findViewById(R.id.scan_content_textview);
             TextView format = (TextView) findViewById(R.id.scan_format_textview);
 
-            contents.setText("Contents: " + scanContents);
-            format.setText("Format: " + scanFormat);
+            contents.setText(getResources().getString(R.string.bar_content_textview) + " " +
+                    scanContents);
+            format.setText(getResources().getString(R.string.bar_format_textview)+ " " +
+                    scanFormat);
         } else {
 
-            Toast toast = Toast.makeText(getApplicationContext(),
+            Toast toast = Toast.makeText(getApplicationContext(), getResources()
+                    .getString(R.string.bar_content_textview) + " " +
                     "No scan data received!", Toast.LENGTH_SHORT);
             toast.show();
         }

@@ -7,6 +7,8 @@
     <!--TextViews-->
     <string name="get_new_task_textview">If you ready to start inventory - just
     press the button \"Get new task\"</string>
+    <string name="bar_content_textview">Barcode: </string>
+    <string name="bar_format_textview">Format: </string>
 
     <!--Labels for activities-->
     <string name="task_label">Task</string>
