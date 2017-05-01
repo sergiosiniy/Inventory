@@ -1,13 +1,6 @@
 package ua.kiev.farmaco.inventory.activities;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.hardware.Camera;
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,11 +10,13 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.journeyapps.barcodescanner.CaptureActivity;
-
 
 import ua.kiev.farmaco.inventory.R;
 
+/**
+ * Author:  Serhii Synohub
+ * Date:    01.05.2017
+ */
 
 public class Task extends AppCompatActivity {
 
