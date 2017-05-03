@@ -9,10 +9,9 @@
     press the button \"Get new task\"</string>
     <string name="bar_content_textview">Barcode: </string>
     <string name="bar_format_textview">Format: </string>
+    <string name="bar_goodname_textview">Name: </string>
 
     <!--Labels for activities-->
     <string name="task_label">Task</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

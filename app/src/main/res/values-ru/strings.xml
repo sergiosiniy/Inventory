@@ -5,5 +5,8 @@
     <string name="get_new_task_textview">Если Вы готовы начать инвентаризацию -
         нажмите кнопку \"Взять задание\".</string>
     <string name="task_label">Задание</string>
+    <string name="bar_content_textview">Штрихкод: </string>
+    <string name="bar_format_textview">Формат: </string>
+    <string name="bar_goodname_textview">"Название товара: "</string>
 
 </resources>

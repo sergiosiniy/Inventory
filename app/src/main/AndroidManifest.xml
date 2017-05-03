@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.flash" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -16,19 +17,21 @@
         android:roundIcon="@mipmap/ic_farmaco"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="ua.kiev.farmaco.inventory.activities.MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ua.kiev.farmaco.inventory.activities.Task"
-            android:label="@string/task_label"/>
+        <activity
+            android:name=".activities.Task"
+            android:label="@string/task_label" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
             tools:replace="screenOrientation" />
+        <service android:name=".activities.FlashControllerService" />
     </application>
 
 </manifest>

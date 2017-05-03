@@ -21,18 +21,19 @@ import ua.kiev.farmaco.inventory.R;
 public class Task extends AppCompatActivity {
 
 
-
+    private Intent illumService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
-
+        illumService = new Intent(this, FlashControllerService.class);
 
         final Button scan = (Button) findViewById(R.id.scan_button);
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startIlluminationService();
                 startScan();
             }
         });
@@ -49,8 +50,10 @@ public class Task extends AppCompatActivity {
         scanBarCode.initiateScan();
     }
 
+    private void startIlluminationService(){
 
-
+        startService(illumService);
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -77,10 +80,17 @@ public class Task extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        stopService(illumService);
+    }
 
     @Override
     protected void onPause() {
-
         super.onPause();
+
     }
+
+
 }

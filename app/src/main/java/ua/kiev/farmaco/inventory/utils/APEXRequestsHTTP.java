@@ -14,8 +14,12 @@ import ua.kiev.farmaco.inventory.model.Good;
 
 public interface APEXRequestsHTTP {
 
+    /**
+     * 
+     * @param barcode scanned barcode from a good or tasklist
+     * @return
+     */
     @GET("/{barcode}")
     Call<List<Good>> getGoodByBarcode(@Path("barcode") String barcode);
-
 
 }

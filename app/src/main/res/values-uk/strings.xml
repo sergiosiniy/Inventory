@@ -4,5 +4,8 @@
     <string name="get_new_task">Взяти завдання</string>
     <string name="get_new_task_textview">Якщо Ви готові почати інвентаризацію - натисніть кнопку \"Взяти завдання\".</string>
     <string name="task_label">Завдання</string>
+    <string name="bar_content_textview">Штрихкод: </string>
+    <string name="bar_format_textview">Формат: </string>
+    <string name="bar_goodname_textview">"Назва товару: "</string>
 
 </resources>

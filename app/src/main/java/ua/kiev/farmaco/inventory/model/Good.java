@@ -9,12 +9,14 @@ public class Good {
 
     private String goodName;
     private String goodBarcode;
+    private int goodCount;
     private int goodId;
 
 
-    Good(String name, String bar, int id){
+    Good(String name, String bar, int count, int id){
         this.goodName = name;
         this.goodBarcode = bar;
+        this.goodCount = count;
         this.goodId = id;
     }
 
@@ -24,6 +26,10 @@ public class Good {
 
     public String getGoodBarcode() {
         return this.goodBarcode;
+    }
+
+    public int getGoodCount() {
+        return goodCount;
     }
 
     public int getGoodId() {
