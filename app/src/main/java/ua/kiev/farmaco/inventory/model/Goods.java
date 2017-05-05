@@ -3,9 +3,11 @@ package ua.kiev.farmaco.inventory.model;
 /**
  * Author:  Serhii Synohub
  * Date:    01.05.2017
+ *
+ * This model describes a goods object which will be returned in http reply
  */
 
-public class Good {
+public class Goods {
 
     private String goodName;
     private String goodBarcode;
@@ -13,7 +15,7 @@ public class Good {
     private int goodId;
 
 
-    Good(String name, String bar, int count, int id){
+    Goods(String name, String bar, int count, int id){
         this.goodName = name;
         this.goodBarcode = bar;
         this.goodCount = count;
